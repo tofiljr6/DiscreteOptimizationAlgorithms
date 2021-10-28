@@ -25,12 +25,12 @@ class Bipartie(Graph):
         return True
 
     def check(self):
-        s = 0
-        while not self.isBipartie(s):
-            s += 1
-            self.verticesColor = [-1 for i in range(self.vertices)]
-
-        return self.isBipartie(s)
+        # s = 0
+        # while not self.isBipartie(s):
+        #     s += 1
+        #     for i in range(len(self.verticesColor)):
+        #         self.verticesColor[i] = -1
+        return self.isBipartie(0)
 
     def divide(self):
         # blue = 1
