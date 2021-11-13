@@ -13,3 +13,10 @@ Lista pierwsza to powtórka z kursu Algorytmy i Struktury Danych. Cała lista sk
 - Vertex in Topology Sort
 - Strongly connected components
 - Bipartite Graph
+
+
+### Lista 2
+
+#### Zadanie 1
+
+Programowanie liniowe
