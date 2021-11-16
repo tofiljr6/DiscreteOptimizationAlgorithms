@@ -92,6 +92,8 @@ Plan przejścia z wierzchołka 1 do wierzchołka 3 o najmnijesyzm koszcie i cał
 |   4	|   0	|   0	|   0	|   0	|   1	|
 |   5	|   0	|   0	|   1	|   0	|   0	|
 
+Pliki wejściowy z danymi to: `graph.txt` oraz `graph2.txt`
+
 ### Przykład 
 
 ![alt text for screen readers](/l2/png/2.png)
@@ -152,6 +154,7 @@ Plan przydziału radiowozów dla każdej ze stref dl akażdej zmiany przedstawio
 |   p2	|   3	|   7	|   10	|
 |   p3	|   5	|   7	|   6	|
 
+Plik wejściowy z danymi to `polizei.txt`
 
 ## 🖖 Zadanie 4
 
@@ -180,3 +183,5 @@ Plan rozkładu kamer
 |   4	|   0	|   0	|   0	|   0	|   0	|
 |   5	|   0	|   0	|   0	|   0	|   0	|
 |   6	|   0	|   0	|   0	|   0	|   0	|
+
+Plik wejściowy z danymi to `company.txt`

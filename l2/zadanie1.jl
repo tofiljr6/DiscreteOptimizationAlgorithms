@@ -4,13 +4,13 @@ using GLPK
 function readFile()
     dir = "/Volumes/SamsungT5/aod/l2/model.txt"
     open(dir) do f
-        numberAirportsAndCompaniesResorces =parse.(Int, split(readline(f), ";"))
+        numberAirportsAndCompaniesResorces =parse.(Int, split(readline(f), " "))
         aname = ["A$i" for i in 1:numberAirportsAndCompaniesResorces[1]]
         cname = ["C$i" for i in 1:numberAirportsAndCompaniesResorces[2]]
         append!(aname , ["BIN"])
 
-        boundCompaniesResorces = parse.(Int, split(readline(f), ";"))
-        boundAirportsResorces = parse.(Int, split(readline(f), ";"))
+        boundCompaniesResorces = parse.(Int, split(readline(f), " "))
+        boundAirportsResorces = parse.(Int, split(readline(f), " "))
 
         diff = sum(boundCompaniesResorces) - sum(boundAirportsResorces)
         append!(boundAirportsResorces, diff)
@@ -18,7 +18,7 @@ function readFile()
         shoping = zeros(Int, length(aname), length(cname))
 
         for i in 1:length(aname)-1
-            line = parse.(Int, split(readline(f), ";"))    
+            line = parse.(Int, split(readline(f), " "))    
             for l in 1:length(line)
                 shoping[i, l] = line[l]
             end
@@ -32,7 +32,15 @@ end
 
 
 
-function run(airportsname, companiesname, boundCompanies, boundAirports, shoppingDict)
+function run()
+    f = readFile()
+    airportsname = f[1]
+    companiesname = f[2]
+    boundCompanies = f[3]
+    boundAirports = f[4]
+    shoppingDict = f[5] 
+    
+    
     model = Model(GLPK.Optimizer)
 
     @variable(model, x[airportsname, companiesname] >= 0)
@@ -55,5 +63,4 @@ function run(airportsname, companiesname, boundCompanies, boundAirports, shoppin
     print(value.(x))
 end
 
-f = readFile()
-run(f[1], f[2], f[3], f[4], f[5])
+run()
